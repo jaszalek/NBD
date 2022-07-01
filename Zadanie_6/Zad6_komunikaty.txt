@@ -1,0 +1,6 @@
+Zapisano
+{"type": "crane", "name": "rtk", "id": "12345", "weight": "200"}
+Updated
+{"type": "crane", "name": "rtk", "id": "12345", "weight": "1200"}
+Deleted
+Brak

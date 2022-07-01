@@ -1,0 +1,16 @@
+--1
+MATCH (movie:Movie) RETURN movie
+--2
+MATCH (hugo: Person {name: "Hugo Weaving"})-[:ACTED_IN]->(hugoMovies) RETURN hugoMovies
+--3
+MATCH (hugo: Person {name: "Hugo Weaving"})-[:ACTED_IN]->(hugoMovies) <-[:DIRECTED]-(directors) RETURN directors
+--4
+MATCH (hugo:Person {name:"Hugo Weaving"})-[:ACTED_IN]->(m)<-[:ACTED_IN]-(colaboratioActors) RETURN colaboratioActors
+--5
+MATCH (matrix:Movie {title:"The Matrix"})<-[:ACTED_IN]-(actors)-[:ACTED_IN]->(movies) RETURN movies
+--6
+MATCH (actors:Person)-[c:ACTED_IN]->(movie) WITH actors, count(c) AS movies RETURN actors, movies
+--7 
+MATCH (writer:Person)-[:WROTE]->(movie:Movie) WITH writer, movie MATCH (writer)-[:DIRECTED]->(movie) RETURN writer,movie
+--8
+MATCH (hugo: Person {name: "Hugo Weaving"})-[:ACTED_IN]->(movie)<-[:ACTED_IN]-(keanu: Person {name: "Keanu Reeves"}) RETURN movie

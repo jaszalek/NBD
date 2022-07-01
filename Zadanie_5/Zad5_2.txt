@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+fn5Ie3OPQeizegZTIlMfKkOokeYcfFkA=
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s16422>; rel="up"
+Last-Modified: Sat, 25 Jun 2022 20:50:18 GMT
+ETag: "lJOH5grWh06SCAIl4NT1e2"
+Date: Sat, 25 Jun 2022 20:52:20 GMT
+Content-Type: application/json
+Content-Length: 55
+
+{type: crane, name: RTK, weight: 200, isOperator: true}

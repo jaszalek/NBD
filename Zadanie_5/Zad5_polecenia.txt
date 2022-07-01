@@ -1,0 +1,33 @@
+--1
+curl -i -XPUT -H "Content-Type: application/json" -d '{"type": "crane", "name": "RTK", "weight": 200, "isOperator": true}' http://localhost:8098/buckets/s16422/keys/rtk
+curl -i -XPUT -H "Content-Type: application/json" -d '{"type": "crane", "name": "GRM", "weight": 1200, "isOperator": false}' http://localhost:8098/buckets/s16422/keys/grm
+curl -i -XPUT -H "Content-Type: application/json" -d '{"type": "crane", "name": "LTK", "weight": 1250, "isOperator": true}' http://localhost:8098/buckets/s16422/keys/ltk
+curl -i -XPUT -H "Content-Type: application/json" -d '{"type": "crane", "name": "LTM", "weight": 600, "isOperator": true}' http://localhost:8098/buckets/s16422/keys/ltm
+curl -i -XPUT -H "Content-Type: application/json" -d '{"type": "digger", "name": "GROVE", "weight": 1200, "isOperator": false}' http://localhost:8098/buckets/s16422/keys/grove
+
+--2
+curl -i -XGET  http://localhost:8098/buckets/s16422/keys/rtk
+
+--3
+curl -i -XPUT -H "Content-Type: application/json" -d '{"type": "crane", "name": "RTK", "weight": 1200, "isOperator": true, "isWorking": true}' http://localhost:8098/buckets/s16422/keys/rtk
+
+--4
+curl -i -XPUT -H "Content-Type: application/json" -d '{"type": "crane", "name": "GRM", "weight": 1200}' http://localhost:8098/buckets/s16422/keys/grm
+
+--5
+curl -i -XPUT -H "Content-Type: application/json" -d '{"type": "digger", "name": "GROVE", "weight": 1200, "isOperator": true}' http://localhost:8098/buckets/s16422/keys/grove
+
+--6
+curl -i -XDELETE http://localhost:8098/buckets/s16422/keys/ltm
+
+--7
+curl -i -XGET  http://localhost:8098/buckets/s16422/keys/nan
+
+--8
+curl -i -XPOST -H "Content-Type: application/json" -d '{"place": "Warsaw"}' http://localhost:8098/buckets/s16422/keys
+
+--9
+curl -i -XGET  http://localhost:8098/buckets/s16422/keys/Q0L9TqqdMnd4UdOmPHFWtOnkL4N
+
+--10
+curl -i -XDELETE http://localhost:8098/buckets/s16422/keys/Q0L9TqqdMnd4UdOmPHFWtOnkL4N
